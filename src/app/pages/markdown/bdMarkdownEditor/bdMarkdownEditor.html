@@ -1,5 +1,5 @@
 <div class="form-group">
-    <textarea ng-model="content" rows="5" class="form-control"></textarea>
+    <textarea ng-model="content" rows="5" class="form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon"></textarea>
     <div class="toolbar">
         <i class="fa fa-smile-o toolbar-item" ng-click="onClickEmoji()"></i>
         <i class="fa fa-image toolbar-item" ng-click="onClickVideo()"></i>
@@ -10,71 +10,17 @@
 
 <div markdown-it="content"></div>
 
-<div class="container" id="app">
-    <div class="row">
-        <div class="col-md-6 col-md-push-3 col-xs-12" style="padding-top: 10px">
-            <div class="text-center set-changers">
-                <label>Change emoji set</label>
-                <div>
-                    <a class="btn btn-default change-emoji-type" data-emoji-type="apple">Apple</a>
-                    <a class="btn btn-default change-emoji-type" data-emoji-type="google">Google</a>
-                    <a class="btn btn-default change-emoji-type" data-emoji-type="twitter">Twitter</a>
-                    <a class="btn btn-default change-emoji-type" data-emoji-type="emojione">Emojione</a>
-                    <a class="btn btn-default change-emoji-type" data-emoji-type="facebook">Facebook</a>
-                    <a class="btn btn-default change-emoji-type" data-emoji-type="messenger">Messenger</a>
-                </div>
-            </div>
-
-            <form>
-                <div class="form-group">
-                    <label>input::text</label>
-                    <input id="fullname" type="text" value=";) Hey! check :heart_eyes:  this.  :dog:  :cat:  :hamster: "
-                           class="form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon">
-                </div>
-                <div class="form-group">
-                    <label class="label-block">&downarrow;</label>
-                    <div id="fullname-output"></div>
-                </div>
-
-            </form>
-
-        </div>
-    </div>
-</div>
 <script type="text/javascript">
     (function () {
 
         wdtEmojiBundle.defaults.emojiSheets = {
             'apple'    : 'assets/wdt-emoji-bundle/sheets/sheet_apple_64_indexed_128.png',
-            'google'   : 'assets/wdt-emoji-bundle/sheets/sheet_google_64_indexed_128.png',
             'twitter'  : 'assets/wdt-emoji-bundle/sheets/sheet_twitter_64_indexed_128.png',
-            'emojione' : 'assets/wdt-emoji-bundle/sheets/sheet_emojione_64_indexed_128.png',
-            'facebook' : 'assets/wdt-emoji-bundle/sheets/sheet_facebook_64_indexed_128.png',
-            'messenger': 'assets/wdt-emoji-bundle/sheets/sheet_messenger_64_indexed_128.png'
         };
-
         wdtEmojiBundle.init('.wdt-emoji-bundle-enabled');
-
-        wdtEmojiBundle.on('afterSelect', function (a, b) {
-            console.log('afterSelect', a, b);
-        });
-
-        var typeChangers = document.querySelectorAll('.change-emoji-type');
-        for (var i = 0; i < typeChangers.length; i++) {
-            typeChangers[i].addEventListener('click', function () {
-                wdtEmojiBundle.changeType(this.dataset.emojiType);
-                return false;
-            });
-        }
+        wdtEmojiBundle.changeType('twitter');
         var ev = document.createEvent('Event');
         ev.initEvent('input', true, true);
-
-        // ------------------------------------------------------
-        document.getElementById('fullname').addEventListener('input', function () {
-            document.getElementById('fullname-output').innerHTML = wdtEmojiBundle.render(this.value);
-        });
-        document.getElementById('fullname').dispatchEvent(ev);
-
     })();
 </script>
 <!--hidden default-->

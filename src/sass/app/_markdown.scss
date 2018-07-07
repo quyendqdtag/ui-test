@@ -6,6 +6,12 @@
     padding: 5px;
   }
 }
+
 .emoji {
   height: 1.2em;
+}
+
+img.emoji {
+  width: 1.2em !important;
+  height: 1.2em !important;
 }
