@@ -10,7 +10,7 @@ $markdown-border: #CBCBCB;
   border-right: 1px solid $markdown-border;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  .round{
+  .round {
     border-radius: 45px;
   }
 }
@@ -24,7 +24,7 @@ img.emoji {
   height: 1.5em !important;
 }
 
-.markdown-content {
+.markdown-editor {
   resize: none;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
@@ -32,4 +32,12 @@ img.emoji {
 
 .media-preview {
 
+}
+
+.markdown-content-view {
+  border: 1px solid $markdown-border;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #fff;
+  padding: 6px 12px;
 }

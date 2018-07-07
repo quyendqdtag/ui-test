@@ -1,17 +1,27 @@
-<div>
-    <textarea ng-model="content" rows="5"
-              class="markdown-content form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon"></textarea>
+<!--EDITOR-->
+<div ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="wdt-emoji-popup">
+    <textarea ng-model="content" id="markdown-editor" rows="5"
+              class="markdown-editor form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon">
+    </textarea>
+    <!--emoji picker here-->
 </div>
-<div class="media-preview" ng-if="isShowMediaPreview()">
-
+<!--MEDIA-->
+<div class="media-preview" ng-if="isShowMediaPreview()"></div>
+<!--VIEW MODE-->
+<div id="markdown-viewer" ng-show="!isEditMode" markdown-it="content"
+     class="markdown-content-view"
+     ng-mousedown="onMouseDownEditor()">
 </div>
+<!--TOOLBAR-->
 <div class="toolbar">
-    <button class="btn btn-success btn-sm round" ng-click="onClickImage()"><i class="fa fa-image toolbar-item"></i> Chen anh</button>
-    <button class="btn btn-success btn-sm round" ng-click="onClickVideo()"><i class="fa fa-map-marker toolbar-item"> Ban do </i>
+    <button class="btn btn-success btn-sm round" ng-click="onClickImage()">
+        <i class="fa fa-image toolbar-item"></i> Chen anh
+    </button>
+    <button class="btn btn-success btn-sm round" ng-click="onClickVideo()">
+        <i class="fa fa-map-marker toolbar-item"> Ban do </i>
     </button>
 </div>
 
-<div markdown-it="content"></div>
 
 <script type="text/javascript">
     (function () {

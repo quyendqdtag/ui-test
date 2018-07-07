@@ -5,7 +5,13 @@
 (function () {
     'use strict';
 
-    angular.module('BlurAdmin.pages.markdown', ['ngSanitize', 'sc.twemoji', 'mdMarkdownIt'])
+    angular.module('BlurAdmin.pages.markdown',
+        [
+            'ngSanitize',
+            'sc.twemoji',
+            'mdMarkdownIt',
+            'angular-click-outside'
+        ])
         .config(routeConfig)
         .config(['markdownItConverterProvider', function (markdownItConverter) {
             markdownItConverter.config('commonmark', {

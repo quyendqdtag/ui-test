@@ -47,6 +47,7 @@
     "postinstall": "bower install"
   },
   "dependencies": {
+    "@iamadamjowett/angular-click-outside": "^2.10.1",
     "angular-markdown-it": "^0.6.1",
     "markdown-it": "^8.4.1",
     "markdown-it-emoji": "^1.4.0",
