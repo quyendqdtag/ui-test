@@ -1589,7 +1589,8 @@ module.exports = function normalize_opts(options) {
 'use strict';
 
 module.exports = function emoji_html(tokens, idx /*, options, env */) {
-  return '<span class="emoji emoji_' + tokens[idx].markup + '"></span>';
+    return twemoji.parse(tokens[idx].content);
+  // return '<span class="emoji emoji_' + tokens[idx].markup + '"></span>';
 };
 
 },{}],5:[function(require,module,exports){
