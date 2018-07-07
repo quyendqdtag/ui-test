@@ -12,6 +12,7 @@
                 breaks: true,
                 html: true
             });
+            markdownItConverter.use(window.markdownitEmoji);
         }]);
 
     /** @ngInject */

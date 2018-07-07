@@ -1,2 +1,11 @@
-<textarea ng-model="content" rows="5"></textarea>
+<div class="form-group">
+    <textarea ng-model="content" rows="5" class="form-control"></textarea>
+    <div class="toolbar">
+        <i class="fa fa-smile-o toolbar-item" ng-click="onClickEmoji()"></i>
+        <i class="fa fa-image toolbar-item" ng-click="onClickVideo()"></i>
+        <i class="fa fa-video-camera toolbar-item" ng-click="onClickImage()"></i>
+    </div>
+</div>
+
+
 <div markdown-it="content"></div>
