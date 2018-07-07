@@ -1,12 +1,12 @@
-<div class="form-group">
-    <textarea ng-model="content" rows="5" class="form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon"></textarea>
-    <div class="toolbar">
-        <i class="fa fa-smile-o toolbar-item" ng-click="onClickEmoji()"></i>
-        <i class="fa fa-image toolbar-item" ng-click="onClickVideo()"></i>
-        <i class="fa fa-video-camera toolbar-item" ng-click="onClickImage()"></i>
-    </div>
+<div>
+    <textarea ng-model="content" rows="5"
+              class="markdown-content form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon"></textarea>
 </div>
-
+<div class="toolbar">
+    <button class="btn btn-default btn-sm" ng-click="onClickImage()"><i class="fa fa-image toolbar-item"></i> Chen anh</button>
+    <button class="btn btn-default btn-sm" ng-click="onClickVideo()"><i class="fa fa-video-camera toolbar-item"> Chen video </i>
+    </button>
+</div>
 
 <div markdown-it="content"></div>
 
@@ -14,8 +14,8 @@
     (function () {
 
         wdtEmojiBundle.defaults.emojiSheets = {
-            'apple'    : 'assets/wdt-emoji-bundle/sheets/sheet_apple_64_indexed_128.png',
-            'twitter'  : 'assets/wdt-emoji-bundle/sheets/sheet_twitter_64_indexed_128.png',
+            'apple': 'assets/wdt-emoji-bundle/sheets/sheet_apple_64_indexed_128.png',
+            'twitter': 'assets/wdt-emoji-bundle/sheets/sheet_twitter_64_indexed_128.png',
         };
         wdtEmojiBundle.init('.wdt-emoji-bundle-enabled');
         wdtEmojiBundle.changeType('twitter');
