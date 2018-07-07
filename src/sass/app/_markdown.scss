@@ -1,12 +1,18 @@
 $markdown-border: #CBCBCB;
 .toolbar {
   padding: 5px 5px;
+  background-color: #fff;
   .toolbar-item {
 
   }
   border-left: 1px solid $markdown-border;
   border-bottom: 1px solid $markdown-border;
   border-right: 1px solid $markdown-border;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  .round{
+    border-radius: 45px;
+  }
 }
 
 .emoji {
@@ -22,4 +28,8 @@ img.emoji {
   resize: none;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+}
+
+.media-preview {
+
 }

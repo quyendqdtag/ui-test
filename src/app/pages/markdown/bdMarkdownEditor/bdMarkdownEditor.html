@@ -2,9 +2,12 @@
     <textarea ng-model="content" rows="5"
               class="markdown-content form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon"></textarea>
 </div>
+<div class="media-preview" ng-if="isShowMediaPreview()">
+
+</div>
 <div class="toolbar">
-    <button class="btn btn-default btn-sm" ng-click="onClickImage()"><i class="fa fa-image toolbar-item"></i> Chen anh</button>
-    <button class="btn btn-default btn-sm" ng-click="onClickVideo()"><i class="fa fa-video-camera toolbar-item"> Chen video </i>
+    <button class="btn btn-success btn-sm round" ng-click="onClickImage()"><i class="fa fa-image toolbar-item"></i> Chen anh</button>
+    <button class="btn btn-success btn-sm round" ng-click="onClickVideo()"><i class="fa fa-map-marker toolbar-item"> Ban do </i>
     </button>
 </div>
 

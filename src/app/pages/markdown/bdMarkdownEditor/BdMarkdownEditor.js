@@ -11,9 +11,15 @@
     /** @ngInject */
     function BdMarkdownEditorCtrl($scope) {
         $scope.content = "__bold__ sweat_smile 8-) :o";
+        $scope.photos = [];
         $scope.onClickEmoji = onClickEmoji;
         $scope.onClickVideo = onClickVideo;
         $scope.onClickImage = onClickImage;
+        $scope.isShowMediaPreview = isShowMediaPreview;
+
+        function isShowMediaPreview() {
+            return $scope.photos && $scope.photos.length > 0;
+        }
 
         function onClickEmoji() {
             alert('showEmojiPopup');
