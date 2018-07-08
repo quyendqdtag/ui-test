@@ -11,6 +11,9 @@
   /** @ngInject */
   function bdMarkdownEditor() {
     return {
+      scope: {
+        uploadServer: '@'
+      },
       restrict: 'E',
       controller: 'BdMarkdownEditorCtrl',
       templateUrl: 'app/pages/markdown/bdMarkdownEditor/bdMarkdownEditor.html'

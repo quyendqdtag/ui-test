@@ -5,22 +5,35 @@
     </textarea>
     <!--emoji picker here-->
 </div>
-<!--MEDIA-->
-<div class="media-preview" ng-if="isShowMediaPreview()"></div>
 <!--VIEW MODE-->
 <div id="markdown-viewer" ng-show="!isEditMode" markdown-it="content"
      class="markdown-content-view"
      ng-mousedown="onMouseDownEditor()">
 </div>
+
+<!--MEDIA-->
+<div class="media-preview" ng-if="isShowMediaPreview()">
+    <span ng-repeat="item in uploader.queue">
+        <span ng-show="uploader.isHTML5" ng-thumb="item._file" height="100"></span>
+        <span class="text-center upload-status">
+            <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok success"></i></span>
+            <span ng-show="item.isError"><i class="glyphicon glyphicon-remove error"></i></span>
+        </span>
+    </span>
+</div>
+
 <!--TOOLBAR-->
 <div class="toolbar">
-    <button class="btn btn-success btn-sm round" ng-click="onClickImage()">
-        <i class="fa fa-image toolbar-item"></i> Chen anh
-    </button>
-    <button class="btn btn-success btn-sm round" ng-click="onClickVideo()">
-        <i class="fa fa-map-marker toolbar-item"> Ban do </i>
-    </button>
+    <!--PHOTO-->
+    <label for="uploadFile" class="toolbar-item">
+        <i class="fa fa-image text-success"></i> Chen anh
+    </label>
+
+    <label class="toolbar-item" ng-click="onClickVideo()">
+        <i class="fa fa-map-marker text-danger"></i>  Ban do
+    </label>
 </div>
+<input id="uploadFile" type="file" nv-file-select="" uploader="uploader" multiple/><br/>
 
 
 <script type="text/javascript">

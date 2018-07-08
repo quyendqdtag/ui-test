@@ -10,7 +10,9 @@
             'ngSanitize',
             'sc.twemoji',
             'mdMarkdownIt',
-            'angular-click-outside'
+            'angular-click-outside',
+            'ngThumb',
+            'angularFileUpload'
         ])
         .config(routeConfig)
         .config(['markdownItConverterProvider', function (markdownItConverter) {
