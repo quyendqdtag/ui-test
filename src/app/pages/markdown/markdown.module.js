@@ -12,7 +12,8 @@
             'mdMarkdownIt',
             'angular-click-outside',
             'ngThumb',
-            'angularFileUpload'
+            'angularFileUpload',
+            'swangular'
         ])
         .config(routeConfig)
         .config(['markdownItConverterProvider', function (markdownItConverter) {
