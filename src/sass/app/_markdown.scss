@@ -4,7 +4,7 @@ $markdown-border: #CBCBCB;
   padding: 5px 5px;
   border-radius: 5px;
   //box-shadow: 0px 1px 7px 1px #0000004d;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
 .toolbar {
@@ -42,9 +42,15 @@ img.emoji {
 
 .markdown-content-view {
   padding: 6px 12px;
+  min-height: 200px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .markdown-editor {
+  min-height: 200px;
+  max-height: 500px;
+  overflow-y: auto;
   resize: none;
   border: 0 !important;
 }
