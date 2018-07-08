@@ -1,6 +1,6 @@
 <!--EDITOR-->
 <div ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="wdt-emoji-popup">
-    <textarea ng-model="content" id="markdown-editor" rows="10"
+    <textarea ng-model="content" id="markdown-editor" rows="10" autofocus
               class="markdown-editor form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon">
     </textarea>
     <!--emoji picker here-->
@@ -26,7 +26,7 @@
 <div class="toolbar">
     <!--PHOTO-->
     <label for="uploadFile" class="toolbar-item">
-        <i class="fa fa-image text-success"></i> Chen anh
+        <i class="fa fa-image text-success"></i> Anh
     </label>
 
     <label class="toolbar-item" ng-click="onClickVideo()">
@@ -40,8 +40,8 @@
     (function () {
 
         wdtEmojiBundle.defaults.emojiSheets = {
-            'apple': 'assets/wdt-emoji-bundle/sheets/sheet_apple_64_indexed_128.png',
-            'twitter': 'assets/wdt-emoji-bundle/sheets/sheet_twitter_64_indexed_128.png',
+            'apple': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_apple_64_indexed_128.png',
+            'twitter': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_twitter_64_indexed_128.png',
         };
         wdtEmojiBundle.init('.wdt-emoji-bundle-enabled');
         wdtEmojiBundle.changeType('twitter');

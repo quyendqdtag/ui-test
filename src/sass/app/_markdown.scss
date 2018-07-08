@@ -11,13 +11,14 @@ $markdown-border: #CBCBCB;
     border-radius: 45px;
   }
   .label {
-    margin: 0;
+
   }
   .toolbar-item {
     padding: 5px 10px;
     background: #f6f7f9;
     border-radius: 18px;
     cursor: pointer;
+    margin: 0 !important;
   }
 }
 
