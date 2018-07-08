@@ -1,18 +1,19 @@
-<!--EDITOR-->
-<div ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="wdt-emoji-popup">
+<div class="markdown-container">
+    <!--EDITOR-->
+    <div ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="wdt-emoji-popup">
     <textarea ng-model="content" id="markdown-editor" rows="10" autofocus
               class="markdown-editor form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon">
     </textarea>
-    <!--emoji picker here-->
-</div>
-<!--VIEW MODE-->
-<div id="markdown-viewer" ng-show="!isEditMode" markdown-it="content"
-     class="markdown-content-view"
-     ng-mousedown="onMouseDownEditor()">
-</div>
+        <!--emoji picker here-->
+    </div>
+    <!--VIEW MODE-->
+    <div id="markdown-viewer" ng-show="!isEditMode" markdown-it="content"
+         class="markdown-content-view"
+         ng-mousedown="onMouseDownEditor()">
+    </div>
 
-<!--MEDIA-->
-<div class="media-preview" ng-if="isShowMediaPreview()">
+    <!--MEDIA-->
+    <div class="media-preview" ng-if="isShowMediaPreview()">
     <span ng-repeat="item in uploader.queue">
         <span ng-show="uploader.isHTML5" ng-thumb="item._file" height="100"></span>
         <span class="text-center upload-status">
@@ -20,21 +21,62 @@
             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove error"></i></span>
         </span>
     </span>
+    </div>
+
+    <!--TOOLBAR-->
+    <div class="toolbar">
+        <!--PHOTO-->
+        <label for="uploadFile" class="toolbar-item">
+            <i class="fa fa-image text-success"></i> Anh
+        </label>
+
+        <label class="toolbar-item" ng-click="onClickVideo()">
+            <i class="fa fa-map-marker text-danger"></i> Ban do
+        </label>
+    </div>
+    <input id="uploadFile" type="file" nv-file-select="" uploader="uploader" multiple/><br/>
+
+
+    <!--hidden default-->
+    <div class="wdt-emoji-popup">
+        <a href="#" class="wdt-emoji-popup-mobile-closer"> × </a>
+        <div class="wdt-emoji-menu-content">
+            <div id="wdt-emoji-menu-header">
+                <a class="wdt-emoji-tab active" data-group-name="Recent"></a>
+                <a class="wdt-emoji-tab" data-group-name="People"></a>
+                <a class="wdt-emoji-tab" data-group-name="Nature"></a>
+                <a class="wdt-emoji-tab" data-group-name="Foods"></a>
+                <a class="wdt-emoji-tab" data-group-name="Activity"></a>
+                <a class="wdt-emoji-tab" data-group-name="Places"></a>
+                <a class="wdt-emoji-tab" data-group-name="Objects"></a>
+                <a class="wdt-emoji-tab" data-group-name="Symbols"></a>
+                <a class="wdt-emoji-tab" data-group-name="Flags"></a>
+                <a class="wdt-emoji-tab" data-group-name="Custom"></a>
+            </div>
+            <div class="wdt-emoji-scroll-wrapper">
+                <div id="wdt-emoji-menu-items">
+                    <input id="wdt-emoji-search" type="text" placeholder="Search">
+                    <h3 id="wdt-emoji-search-result-title">Search Results</h3>
+                    <div class="wdt-emoji-sections"></div>
+                    <div id="wdt-emoji-no-result">No emoji found</div>
+                </div>
+            </div>
+            <div id="wdt-emoji-footer">
+                <div id="wdt-emoji-preview">
+                    <span id="wdt-emoji-preview-img"></span>
+                    <div id="wdt-emoji-preview-text">
+                        <span id="wdt-emoji-preview-name"></span><br>
+                        <span id="wdt-emoji-preview-aliases"></span>
+                    </div>
+                </div>
+                <div id="wdt-emoji-preview-bundle">
+                    <span>WDT Emoji Bundle</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
-
-<!--TOOLBAR-->
-<div class="toolbar">
-    <!--PHOTO-->
-    <label for="uploadFile" class="toolbar-item">
-        <i class="fa fa-image text-success"></i> Anh
-    </label>
-
-    <label class="toolbar-item" ng-click="onClickVideo()">
-        <i class="fa fa-map-marker text-danger"></i>  Ban do
-    </label>
-</div>
-<input id="uploadFile" type="file" nv-file-select="" uploader="uploader" multiple/><br/>
-
 
 <script type="text/javascript">
     (function () {
@@ -49,41 +91,3 @@
         ev.initEvent('input', true, true);
     })();
 </script>
-<!--hidden default-->
-<div class="wdt-emoji-popup">
-    <a href="#" class="wdt-emoji-popup-mobile-closer"> × </a>
-    <div class="wdt-emoji-menu-content">
-        <div id="wdt-emoji-menu-header">
-            <a class="wdt-emoji-tab active" data-group-name="Recent"></a>
-            <a class="wdt-emoji-tab" data-group-name="People"></a>
-            <a class="wdt-emoji-tab" data-group-name="Nature"></a>
-            <a class="wdt-emoji-tab" data-group-name="Foods"></a>
-            <a class="wdt-emoji-tab" data-group-name="Activity"></a>
-            <a class="wdt-emoji-tab" data-group-name="Places"></a>
-            <a class="wdt-emoji-tab" data-group-name="Objects"></a>
-            <a class="wdt-emoji-tab" data-group-name="Symbols"></a>
-            <a class="wdt-emoji-tab" data-group-name="Flags"></a>
-            <a class="wdt-emoji-tab" data-group-name="Custom"></a>
-        </div>
-        <div class="wdt-emoji-scroll-wrapper">
-            <div id="wdt-emoji-menu-items">
-                <input id="wdt-emoji-search" type="text" placeholder="Search">
-                <h3 id="wdt-emoji-search-result-title">Search Results</h3>
-                <div class="wdt-emoji-sections"></div>
-                <div id="wdt-emoji-no-result">No emoji found</div>
-            </div>
-        </div>
-        <div id="wdt-emoji-footer">
-            <div id="wdt-emoji-preview">
-                <span id="wdt-emoji-preview-img"></span>
-                <div id="wdt-emoji-preview-text">
-                    <span id="wdt-emoji-preview-name"></span><br>
-                    <span id="wdt-emoji-preview-aliases"></span>
-                </div>
-            </div>
-            <div id="wdt-emoji-preview-bundle">
-                <span>WDT Emoji Bundle</span>
-            </div>
-        </div>
-    </div>
-</div>

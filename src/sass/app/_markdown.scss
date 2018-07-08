@@ -1,12 +1,17 @@
 $markdown-border: #CBCBCB;
+.markdown-container {
+  background-color: #ffffff;
+  padding: 5px 5px;
+}
+
 .toolbar {
   padding: 5px 5px;
   background-color: #fff;
-  border-top: 1px solid $markdown-border;
-  @extend .border-h;
-  border-bottom: 1px solid $markdown-border;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  //border-top: 1px solid $markdown-border;
+  //@extend .border-h;
+  //border-bottom: 1px solid $markdown-border;
+  //border-bottom-right-radius: 5px;
+  //border-bottom-left-radius: 5px;
   .round {
     border-radius: 45px;
   }
@@ -32,8 +37,8 @@ img.emoji {
 }
 
 .media-preview {
-  background-color: #ffffff;
-  @extend .border-h;
+  //background-color: #ffffff;
+  //@extend .border-h;
 
   .upload-status {
     margin-left: -17px !important;
@@ -47,19 +52,19 @@ img.emoji {
 }
 
 .markdown-content-view {
-  @extend .border-h;
-  border-top: 1px solid $markdown-border;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #fff;
+  //@extend .border-h;
+  //border-top: 1px solid $markdown-border;
+  //border-top-left-radius: 5px;
+  //border-top-right-radius: 5px;
+  //background-color: #fff;
   padding: 6px 12px;
 }
 
 .markdown-editor {
   resize: none;
-  border-top: 1px solid $markdown-border;
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
+  //border-top: 1px solid $markdown-border;
+  //border-bottom-right-radius: 0 !important;
+  //border-bottom-left-radius: 0 !important;
 }
 
 canvas {
