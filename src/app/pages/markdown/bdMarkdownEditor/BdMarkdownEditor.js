@@ -16,6 +16,7 @@
             maxQuantity: 3
         };
         $scope.uploader = fileUploader.buildPhotoUploader(uploadConfig);
+        // TODO add photoUrl to photos
 
         $scope.content = "__bold__ sweat_smile 8-) :o";
         $scope.photos = [
