@@ -29,14 +29,18 @@ img.emoji {
 }
 
 .media-preview {
-  .upload-status {
-    margin-left: -17px !important;
-  }
-  .error {
-    color: red;
-  }
-  .success {
-    color: green;
+  .action-container {
+    margin-bottom: -15px;
+    .delete {
+      padding: 2px;
+      background-color: #fff;
+      border-radius: 18px;
+      @extend .normal-shadow;
+      border: 1px solid $markdown-border;
+    }
+    .delete:hover {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -55,23 +59,23 @@ img.emoji {
   border: 0 !important;
 }
 
-canvas {
+.canvas {
+  @extend .normal-shadow;
   background-color: #f3f3f3;
-  -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
-  -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
-  box-shadow: 3px 3px 3px 0 #e3e3e3;
   border: 1px solid #c3c3c3;
   height: 60px;
   margin: 6px 0 0 6px;
-}
-
-.border-h {
-  border-right: 1px solid $markdown-border;
-  border-left: 1px solid $markdown-border;
+  :hover {
+    height: 100px;
+  }
 }
 
 #uploadFile {
   height: 0 !important;
   position: absolute;
   display: none;
+}
+
+.normal-shadow {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }

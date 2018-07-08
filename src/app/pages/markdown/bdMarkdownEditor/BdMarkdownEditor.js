@@ -12,7 +12,8 @@
     function BdMarkdownEditorCtrl($scope, FileUploader) {
         var uploader = $scope.uploader = new FileUploader({
             url: $scope.uploadServer,
-            autoUpload: true
+            autoUpload: true,
+            removeAfterUpload: true
         });
 
         // FILTERS
@@ -51,9 +52,7 @@
         uploader.onErrorItem = function (fileItem, response, status, headers) {
             console.info('onErrorItem', fileItem, response, status, headers);
         };
-        uploader.onCancelItem = function (fileItem, response, status, headers) {
-            console.info('onCancelItem', fileItem, response, status, headers);
-        };
+
         uploader.onCompleteItem = function (fileItem, response, status, headers) {
             console.info('onCompleteItem', fileItem, response, status, headers);
         };
@@ -64,7 +63,11 @@
         console.info('uploader', uploader);
 
         $scope.content = "__bold__ sweat_smile 8-) :o";
-        $scope.photos = [];
+        $scope.photos = [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSodzkua6IUyTjZCTg-9VtLudrvLSrEeD4dn2qrfelUQO5w4M5G',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6x0qGQamxaiAtVE-O8L5LVkC5wrT8Fe9AmKiJfk8bOpCj5mxZ4Q',
+            'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350',
+        ];
         $scope.isEditMode = true;
 
         $scope.onClickEmoji = onClickEmoji;
@@ -74,6 +77,12 @@
         $scope.onMouseDownEditorView = onMouseDownEditorView;
         $scope.onClickOutsideEditor = onClickOutsideEditor;
         $scope.onClickOutsideEmojiPopup = onClickOutsideEmojiPopup;
+        $scope.removePhoto = removePhoto;
+
+        function removePhoto(index) {
+            $scope.photos.splice(index, 1);
+            // TODO send request to server to remove this image
+        }
 
         function onMouseDownEditorView() {
             $scope.isEditMode = true;
@@ -101,7 +110,7 @@
         }
 
         function isShowMediaPreview() {
-            return uploader && uploader.queue && uploader.queue.length > 0;
+            return $scope.photos && $scope.photos.length > 0;
         }
 
         function onClickEmoji() {

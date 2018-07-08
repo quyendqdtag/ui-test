@@ -14,13 +14,15 @@
 
     <!--MEDIA-->
     <div class="media-preview" ng-if="isShowMediaPreview()">
-    <span ng-repeat="item in uploader.queue">
-        <span ng-show="uploader.isHTML5" ng-thumb="item._file" height="100"></span>
-        <span class="text-center upload-status">
-            <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok success"></i></span>
-            <span ng-show="item.isError"><i class="glyphicon glyphicon-remove error"></i></span>
-        </span>
-    </span>
+        <div ng-repeat="item in photos track by $index" style="display: inline-block">
+            <!--action-->
+            <div class="action-container">
+                <span ng-click="removePhoto($index)" class="glyphicon glyphicon-remove delete"></span>
+            </div>
+
+            <!--thumbnail-->
+            <img class="canvas" ng-src="{{item}}" height="100"/>
+        </div>
     </div>
 
     <!--TOOLBAR-->
