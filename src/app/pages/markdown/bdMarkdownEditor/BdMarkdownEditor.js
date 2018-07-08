@@ -71,13 +71,17 @@
         $scope.onClickVideo = onClickVideo;
         $scope.onClickImage = onClickImage;
         $scope.isShowMediaPreview = isShowMediaPreview;
-        $scope.onMouseDownEditor = onMouseDownEditor;
+        $scope.onMouseDownEditorView = onMouseDownEditorView;
         $scope.onClickOutsideEditor = onClickOutsideEditor;
         $scope.onClickOutsideEmojiPopup = onClickOutsideEmojiPopup;
 
-        function onMouseDownEditor() {
-            console.log('onMouseDownEditor');
+        function onMouseDownEditorView() {
             $scope.isEditMode = true;
+            setTimeout(function () {
+                var editor = $("#markdown-editor");
+                editor.focus();
+            }, 0);
+
         }
 
         function onClickOutsideEmojiPopup() {
@@ -87,7 +91,6 @@
         }
 
         function onClickOutsideEditor() {
-            console.log('onMouseLeaveEditor');
             $scope.isEditMode = false;
             //Update height for markdown-view
             var editor = $("#markdown-editor");
