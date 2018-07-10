@@ -54,9 +54,12 @@ img.emoji {
 .markdown-editor {
   min-height: 200px;
   max-height: 500px;
-  overflow-y: auto;
   resize: none;
   border: 0 !important;
+  overflow: visible;
+  .search{
+    margin: 0;
+  }
 }
 
 .canvas {

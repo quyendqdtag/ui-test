@@ -42,17 +42,15 @@
 
         function onMouseDownEditorView() {
             $scope.isEditMode = true;
-            setTimeout(function () {
-                var editor = $("#markdown-editor");
-                editor.focus();
-            }, 0);
+            // setTimeout(function () {
+            //     var editor = $("#markdown-editor");
+            //     editor.focus();
+            // }, 0);
 
         }
 
         function onClickOutsideEmojiPopup() {
-            var emojiPopup = $(".wdt-emoji-popup");
-            if (emojiPopup) {
-            }
+
         }
 
         function onClickOutsideEditor() {
