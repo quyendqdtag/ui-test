@@ -1,13 +1,15 @@
 <div class="markdown-container">
     <!--EDITOR-->
-    <div ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="wdt-emoji-popup">
+    <!--click-outside="onClickOutsideEditor()" outside-if-not="wdt-emoji-popup"-->
+    <div ng-show="isEditMode">
     <textarea ng-model="content" id="markdown-editor" rows="10" autofocus
               class="markdown-editor form-control wdt-emoji-bundle-enabled wdt-emoji-open-on-colon">
     </textarea>
         <!--emoji picker here-->
     </div>
     <!--VIEW MODE-->
-    <div id="markdown-viewer" ng-show="!isEditMode" markdown-it="content"
+    <!--ng-show="!isEditMode"-->
+    <div id="markdown-viewer"  markdown-it="content"
          class="markdown-content-view"
          ng-mousedown="onMouseDownEditorView()">
     </div>
@@ -89,4 +91,30 @@
         var ev = document.createEvent('Event');
         ev.initEvent('input', true, true);
     })();
+</script>
+
+<textarea id="example1"></textarea>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#example1").emojioneArea({
+            useInternalCDN: true,
+            buttonTitle: "Use the TAB key to insert emoji faster",
+            recentEmojis: false,
+            pickerPosition: "bottom",
+            searchPosition: "bottom",
+            shortnames: true,
+            saveEmojisAs: 'shortname'
+        });
+    });
+    $(document).ready(function () {
+        $("#markdown-editor").emojioneArea({
+            useInternalCDN: true,
+            buttonTitle: "Use the TAB key to insert emoji faster",
+            recentEmojis: false,
+            pickerPosition: "bottom",
+            searchPosition: "bottom",
+            shortnames: true,
+            saveEmojisAs: 'shortname'
+        });
+    });
 </script>
