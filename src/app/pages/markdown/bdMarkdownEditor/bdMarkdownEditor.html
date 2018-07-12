@@ -1,7 +1,7 @@
 <div class="markdown-container">
     {{isEditMode}}
     <!--EDITOR-->
-    <textarea ng-show="isEditMode"
+    <textarea ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="emojionearea-picker"
               ng-model="content"
               id="markdown-editor"
               rows="10"
@@ -56,7 +56,8 @@
             saveEmojisAs: 'shortname',
             tones: false,
             autocomplete: false,
-            inline: false
+            search: false
+
         });
     });
 </script>
