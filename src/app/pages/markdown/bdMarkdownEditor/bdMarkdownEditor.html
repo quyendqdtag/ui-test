@@ -1,20 +1,24 @@
 <div class="markdown-container">
-    {{isEditMode}}
+    {{content | json}}
     <!--EDITOR-->
-    <textarea ng-show="isEditMode" click-outside="onClickOutsideEditor()" outside-if-not="emojionearea-picker"
-              ng-model="content"
-              id="markdown-editor"
-              rows="10"
-              autofocus
-              click-outside="onClickOutsideEditor()"
-              class="markdown-editor form-control">
-    </textarea>
-    <!--VIEW MODE-->
-    <!--ng-show="!isEditMode"-->
-    <div id="markdown-viewer" markdown-it="content" ng-show="!isEditMode"
-         class="markdown-content-view"
-         ng-mousedown="onMouseDownEditorView()">
+    <div click-outside="onClickOutsideEditor()" outside-if-not="markdown-viewer" ng-show="isEditMode">
+        <textarea ng-model="content"
+                  id="markdown-editor"
+                  rows="10"
+                  autofocus
+                  ng-mousedown="onMouseDownEditor()"
+                  class="markdown-editor form-control">
+        </textarea>
     </div>
+
+    <!--VIEW MODE-->
+    <div ng-if="!isEditMode" id="markdown-viewer">
+        <div markdown-it="content"
+             class="markdown-content-view"
+             ng-mousedown="onMouseDownEditorView()">
+        </div>
+    </div>
+
 
     <!--MEDIA-->
     <div class="media-preview" ng-if="isShowMediaPreview()">
@@ -44,7 +48,6 @@
 </div>
 <input id="uploadFile" type="file" nv-file-select="" uploader="uploader" multiple/><br/>
 
-<textarea id="example1"></textarea>
 <script type="text/javascript">
     $(document).ready(function () {
         $("#markdown-editor").emojioneArea({

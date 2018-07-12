@@ -22,7 +22,6 @@
         return {
             restrict: 'A',
             link: function($scope, elem, attr) {
-
                 // postpone linking to next digest to allow for unique id generation
                 $timeout(function() {
                     var classList = (attr.outsideIfNot !== undefined) ? attr.outsideIfNot.split(/[ ,]+/) : [],

@@ -32,6 +32,7 @@
         $scope.isShowMediaPreview = isShowMediaPreview;
         $scope.onMouseDownEditorView = onMouseDownEditorView;
         $scope.onClickOutsideEditor = onClickOutsideEditor;
+        $scope.onMouseDownEditor = onMouseDownEditor;
         $scope.onClickOutsideEmojiPopup = onClickOutsideEmojiPopup;
         $scope.removePhoto = removePhoto;
 
@@ -40,12 +41,18 @@
             // TODO send request to server to remove this image
         }
 
-        function onMouseDownEditorView() {
+        function onMouseDownEditor() {
+            console.log('onMouseDownEditor');
             $scope.isEditMode = true;
-            // setTimeout(function () {
-            //     var editor = $("#markdown-editor");
-            //     editor.focus();
-            // }, 0);
+        }
+
+        function onMouseDownEditorView() {
+            console.log('onMouseDownEditorView');
+            $scope.isEditMode = true;
+            setTimeout(function () {
+                var editor = $("#markdown-editor");
+                editor.focus();
+            }, 1);
 
         }
 
@@ -54,6 +61,7 @@
         }
 
         function onClickOutsideEditor() {
+            console.log('onClickOutsideEditor');
             $scope.isEditMode = false;
             //Update height for markdown-view
             var editor = $("#markdown-editor");

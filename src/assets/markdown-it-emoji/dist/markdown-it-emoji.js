@@ -1639,7 +1639,7 @@
             'use strict';
 
             module.exports = function emoji_html(tokens, idx /*, options, env */) {
-                console.log(emojione.toImage(tokens[idx].content));
+                // console.log(emojione.toImage(tokens[idx].content));
                 return emojione.toImage(tokens[idx].content)
                 // return '<span class="emoji emoji_' + tokens[idx].markup + '"></span>';
             };
