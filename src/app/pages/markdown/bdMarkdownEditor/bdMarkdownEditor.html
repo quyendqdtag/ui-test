@@ -1,5 +1,4 @@
 <div class="markdown-container">
-    {{content | json}}
     <!--EDITOR-->
     <div click-outside="onClickOutsideEditor()" outside-if-not="markdown-viewer" ng-show="isEditMode">
         <textarea ng-model="content"
@@ -15,7 +14,7 @@
     <div ng-if="!isEditMode" id="markdown-viewer">
         <div markdown-it="content"
              class="markdown-content-view"
-             ng-mousedown="onMouseDownEditorView()">
+             ng-mousedown="onMouseDownEditorView($event)">
         </div>
     </div>
 

@@ -46,13 +46,15 @@
             $scope.isEditMode = true;
         }
 
-        function onMouseDownEditorView() {
+        function onMouseDownEditorView(event) {
             console.log('onMouseDownEditorView');
             $scope.isEditMode = true;
             setTimeout(function () {
-                var editor = $("#markdown-editor");
+                // var editor = $("#markdown-editor");
+                var editor = document.getElementById('markdown-editor');
+                console.log(editor);
                 editor.focus();
-            }, 1);
+            }, 0);
 
         }
 
