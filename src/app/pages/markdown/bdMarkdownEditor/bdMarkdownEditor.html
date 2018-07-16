@@ -19,6 +19,11 @@
         </div>
     </div>
 
+    <!--EMOJI PICKER-->
+    <div class="bd-emoji-picker-container">
+        <input type="text" bd-emoji-picker emoji-options="emojiEditorOptions">
+    </div>
+
 
     <!--MEDIA-->
     <div class="media-preview" ng-if="isShowMediaPreview()">
@@ -36,7 +41,6 @@
 
     <!--TOOLBAR-->
     <div class="toolbar">
-        <input type="text" bd-emoji-picker="{{emojiEditorOptions}}" emoji-options="emojiEditorOptions">
         <!--PHOTO-->
         <label for="uploadFile" class="toolbar-item">
             <i class="fa fa-image text-success"></i> Anh
@@ -52,21 +56,29 @@
 </div>
 
 <div id="standalone"></div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        // var emojiPicker = $("#markdown-editor").emojioneArea({
-        //     useInternalCDN: true,
-        //     buttonTitle: "Use the TAB key to insert emoji faster",
-        //     recentEmojis: false,
-        //     pickerPosition: "bottom",
-        //     shortnames: true,
-        //     saveEmojisAs: 'shortname',
-        //     tones: false,
-        //     autocomplete: false,
-        //     search: false
-        //
-        // });
+<style>
+    .emojionearea.emojionearea-standalone .emojionearea-button > div {
+        right: 0 !important;
+        top: 0 !important;
+    }
 
+    .emojionearea-button {
+        position: relative;
+    }
 
-    });
-</script>
+    .emojionearea-editor {
+        display: none !important;
+    }
+
+    .emojionearea-standalone {
+        border: 0 !important;
+        width: 26px !important;
+        height: 26px !important;
+        background-color: transparent !important;
+    }
+
+    .emojionearea .emojionearea-button.active + .emojionearea-picker-position-bottom {
+        margin-top: -20px !important;
+        right: -5px !important;
+    }
+</style>

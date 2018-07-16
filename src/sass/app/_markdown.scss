@@ -1,4 +1,4 @@
-$markdown-border: #CBCBCB;
+$markdown-border: #eee;
 .markdown-container {
   background-color: #ffffff;
   padding: 5px 5px;
@@ -10,6 +10,7 @@ $markdown-border: #CBCBCB;
 .toolbar {
   padding: 5px 5px;
   background-color: #fff;
+  border-top: 1px solid $markdown-border;
   .toolbar-item {
     padding: 5px 10px;
     background: #f6f7f9;
@@ -29,6 +30,8 @@ img.emoji {
 }
 
 .media-preview {
+  border-top: 1px solid $markdown-border;
+  padding-bottom: 10px;
   .action-container {
     margin-bottom: -15px;
     .delete {
@@ -57,7 +60,7 @@ img.emoji {
   resize: none;
   border: 0 !important;
   overflow: visible;
-  .search{
+  .search {
     margin: 0;
   }
 }
@@ -82,4 +85,10 @@ img.emoji {
 .normal-shadow {
   //box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.bd-emoji-picker-container {
+  margin-top: -27px !important;
+  margin-right: 1px !important;
+  float: right !important;
 }

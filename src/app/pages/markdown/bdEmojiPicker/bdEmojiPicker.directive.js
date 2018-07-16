@@ -16,7 +16,16 @@
             // Config Emoji
             var emoji = element.emojioneArea({
                 standalone: true,
-                autocomplete: false
+                autocomplete: false,
+                search: false,
+                pickerPosition: "bottom",
+                filter: false,
+                hidePickerOnBlur: true,
+                tones: false,
+                recent: false,
+                shortnames: true,
+                saveEmojisAs: 'shortname', // 'unicode' | 'shortname' | 'image',
+
             });
 
             emoji[0].emojioneArea.on("emojibtn.click", function (button, event) {

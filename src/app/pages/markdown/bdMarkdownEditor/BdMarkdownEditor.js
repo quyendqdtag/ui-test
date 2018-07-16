@@ -42,6 +42,12 @@
 
         $scope.$on('EMOJI_PICKED', _onEmojiPicked);
 
+        /**
+         *
+         * @param event
+         * @param data {shortName: ":heart:", img: "<img src=''></img>"}
+         * @private
+         */
         function _onEmojiPicked(event, data) {
             console.log(data);
             $scope.content += ' ' + data.shortName;
