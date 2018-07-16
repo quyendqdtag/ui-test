@@ -1,5 +1,6 @@
 <div class="markdown-container">
     <!--EDITOR-->
+    {{content}}
     <div click-outside="onClickOutsideEditor()" outside-if-not="markdown-viewer" ng-show="isEditMode">
         <textarea ng-model="content"
                   id="markdown-editor"
@@ -35,6 +36,7 @@
 
     <!--TOOLBAR-->
     <div class="toolbar">
+        <input type="text" bd-emoji-picker="{{emojiEditorOptions}}" emoji-options="emojiEditorOptions">
         <!--PHOTO-->
         <label for="uploadFile" class="toolbar-item">
             <i class="fa fa-image text-success"></i> Anh
@@ -47,19 +49,24 @@
 </div>
 <input id="uploadFile" type="file" nv-file-select="" uploader="uploader" multiple/><br/>
 
+</div>
+
+<div id="standalone"></div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#markdown-editor").emojioneArea({
-            useInternalCDN: true,
-            buttonTitle: "Use the TAB key to insert emoji faster",
-            recentEmojis: false,
-            pickerPosition: "bottom",
-            shortnames: true,
-            saveEmojisAs: 'shortname',
-            tones: false,
-            autocomplete: false,
-            search: false
+        // var emojiPicker = $("#markdown-editor").emojioneArea({
+        //     useInternalCDN: true,
+        //     buttonTitle: "Use the TAB key to insert emoji faster",
+        //     recentEmojis: false,
+        //     pickerPosition: "bottom",
+        //     shortnames: true,
+        //     saveEmojisAs: 'shortname',
+        //     tones: false,
+        //     autocomplete: false,
+        //     search: false
+        //
+        // });
 
-        });
+
     });
 </script>
