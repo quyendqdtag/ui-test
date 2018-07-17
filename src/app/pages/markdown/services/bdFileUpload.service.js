@@ -6,9 +6,9 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.markdown')
-        .factory('fileUploader', fileUploader);
+        .factory('bdFileUploaderHelper', bdFileUploaderHelper);
 
-    function fileUploader(FileUploader, swangular) {
+    function bdFileUploaderHelper(FileUploader, swangular) {
         return {
             buildPhotoUploader: buildPhotoUploader
         };

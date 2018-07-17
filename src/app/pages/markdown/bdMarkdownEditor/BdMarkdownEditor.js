@@ -9,16 +9,15 @@
         .controller('BdMarkdownEditorCtrl', BdMarkdownEditorCtrl);
 
     /** @ngInject */
-    function BdMarkdownEditorCtrl($scope, fileUploader) {
+    function BdMarkdownEditorCtrl($scope, bdFileUploaderHelper) {
+        console.log($scope.options);
         var uploadConfig = {
-            url: 'http://localhost:8080/fileupload',
+            url: $scope.uploadServer,
             maxSize: 1, // 1MB
             maxQuantity: 3
         };
-        $scope.uploader = fileUploader.buildPhotoUploader(uploadConfig);
+        $scope.uploader = bdFileUploaderHelper.buildPhotoUploader(uploadConfig);
         // TODO add photoUrl to photos
-
-        $scope.content = "__bold__  8-) :o";
 
         $scope.emojiEditorOptions = {
         };
@@ -43,14 +42,14 @@
         $scope.$on('EMOJI_PICKED', _onEmojiPicked);
 
         /**
-         *
+         * append emoji for markdown
          * @param event
          * @param data {shortName: ":heart:", img: "<img src=''></img>"}
          * @private
          */
         function _onEmojiPicked(event, data) {
             console.log(data);
-            $scope.content += ' ' + data.shortName;
+            $scope.options.content += ' ' + data.shortName;
             $scope.$apply();
         }
 

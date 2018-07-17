@@ -31,6 +31,7 @@
                 url: '/markdown',
                 templateUrl: 'app/pages/markdown/markdown.html',
                 title: 'markdown',
+                controller: 'MarkdownCtrl',
                 sidebarMeta: {
                     icon: 'ion-android-home',
                     order: 0,

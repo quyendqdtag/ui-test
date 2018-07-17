@@ -1,7 +1,7 @@
 <div class="markdown-container">
     <!--EDITOR-->
     <div click-outside="onClickOutsideEditor()" outside-if-not="markdown-viewer" ng-show="isEditMode">
-        <textarea ng-model="content"
+        <textarea ng-model="options.content"
                   id="markdown-editor"
                   rows="10"
                   autofocus
@@ -12,7 +12,7 @@
 
     <!--VIEW MODE-->
     <div ng-if="!isEditMode" id="markdown-viewer">
-        <div markdown-it="content"
+        <div markdown-it="options.content"
              class="markdown-content-view"
              ng-mousedown="onMouseDownEditorView($event)">
         </div>
