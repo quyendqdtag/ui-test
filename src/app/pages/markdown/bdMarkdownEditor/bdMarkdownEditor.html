@@ -26,7 +26,7 @@
 
     <!--MEDIA-->
     <div class="media-preview" ng-if="isShowMediaPreview()">
-        <div ng-repeat="item in photos track by $index" style="display: inline-block">
+        <div ng-repeat="item in options.photos track by $index" style="display: inline-block">
             <!--action-->
             <div class="action-container">
                 <span ng-click="removePhoto($index)" class="glyphicon glyphicon-remove delete"></span>

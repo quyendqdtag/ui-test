@@ -20,7 +20,7 @@
                 search: false,
                 pickerPosition: "bottom",
                 filter: false,
-                hidePickerOnBlur: true,
+                hidePickerOnBlur: false,
                 tones: false,
                 recent: false,
                 shortnames: true,
