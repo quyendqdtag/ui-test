@@ -54,7 +54,10 @@ img.emoji {
   overflow-y: auto;
   table {
     @extend .table;
-    //@extend .table-striped;
+    @extend .table-bordered;
+    td, tr, thead, tbody, th {
+      padding: 5px 10px !important;
+    }
   }
 }
 

@@ -30,7 +30,6 @@
                 typographer:  true,
             });
             markdownItConverter.use(window.markdownitEmoji);
-            markdownItConverter.use(window.markdownitMultimdTable);
             console.log(window);
         }]);
 
