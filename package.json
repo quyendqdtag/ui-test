@@ -52,7 +52,6 @@
     "markdown-it": "^8.4.1",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-multimd-table": "^3.1.3",
-    "twemoji": "^11.0.0",
-    "wdt-emoji-bundle": "^0.2.1"
+    "twemoji": "^11.0.0"
   }
 }

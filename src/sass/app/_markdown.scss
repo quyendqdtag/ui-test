@@ -52,6 +52,10 @@ img.emoji {
   min-height: 200px;
   max-height: 500px;
   overflow-y: auto;
+  table {
+    @extend .table;
+    //@extend .table-striped;
+  }
 }
 
 .markdown-editor {
