@@ -57,7 +57,8 @@
     "angular-ui-select": "^0.19.6",
     "angular-file-upload": "^2.5.0",
     "ng-thumb": "^1.0.1",
-    "swangular": "^1.4.3"
+    "swangular": "^1.4.3",
+    "markdown-it-html5-embed": "^1.0.0"
   },
   "resolutions": {
     "angular": "~1.5.9",

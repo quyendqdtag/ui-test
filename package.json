@@ -51,7 +51,6 @@
     "angular-markdown-it": "^0.6.1",
     "markdown-it": "^8.4.1",
     "markdown-it-emoji": "^1.4.0",
-    "markdown-it-multimd-table": "^3.1.3",
     "twemoji": "^11.0.0"
   }
 }

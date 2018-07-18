@@ -18,18 +18,24 @@
         .config(routeConfig)
         .config(['markdownItConverterProvider', function (markdownItConverter) {
             markdownItConverter.config('default', {
-                html:         true,        // Enable HTML tags in source
-                xhtmlOut:     false,        // Use '/' to close single tags (<br />).
-                                            // This is only for full CommonMark compatibility.
-                breaks:       true,        // Convert '\n' in paragraphs into <br>
-                langPrefix:   'language-',  // CSS language prefix for fenced blocks. Can be
-                                            // useful for external highlighters.
-                linkify:      true,        // Autoconvert URL-like text to links
+                html: true,        // Enable HTML tags in source
+                xhtmlOut: false,        // Use '/' to close single tags (<br />).
+                                        // This is only for full CommonMark compatibility.
+                breaks: true,        // Convert '\n' in paragraphs into <br>
+                langPrefix: 'language-',  // CSS language prefix for fenced blocks. Can be
+                                          // useful for external highlighters.
+                linkify: true,        // Autoconvert URL-like text to links
 
                 // Enable some language-neutral replacement + quotes beautification
-                typographer:  true,
+                typographer: true,
             });
             markdownItConverter.use(window.markdownitEmoji);
+            markdownItConverter.use(window.markdownitHTML5Embed, {
+                html5embed: {
+                    useLinkSyntax: true,
+                    useImageSyntax: true
+                }
+            });
             console.log(window);
         }]);
 
